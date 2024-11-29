@@ -37,7 +37,7 @@ from main.views.post import PostListView, PostDetailView
 from main.views.comment import CommentListView, CommentDetailView
 
 # 카페 및 장소 관련 뷰
-from main.views.cafe import NearbyCafeListView, NearbyCafeDetailView
+from main.views.cafe import NearbyCafeListView, NearbyCafeDetailView, MidpointCafeListView
 from main.views.rating import RatingListView, RatingDetailView
 from main.views.review import ReviewListView, ReviewDetailView
 
@@ -79,13 +79,14 @@ urlpatterns = [
 
     # 카페 관련
     path('cafes/nearby/', NearbyCafeListView.as_view(), name='nearby-cafes'),  # 주변 카페 목록 조회
-    path('cafes/nearby/<int:cafe_id>/', NearbyCafeDetailView.as_view(), name='nearby-cafe-detail'),  # 카페 상세 조회
-
-    path('cafes/<int:cafe_id>/ratings/', RatingListView.as_view(), name='rating-list'),  # 특정 카페의 별점 목록 조회 및 추가
-    path('cafes/<int:cafe_id>/ratings/<int:pk>/', RatingDetailView.as_view(), name='rating-detail'),
+    path('cafes/nearby/<str:cafe_name>/', NearbyCafeDetailView.as_view(), name='nearby-cafe-detail'),
+    path('cafes/midpoint/', MidpointCafeListView.as_view(), name='midpoint-cafes'),
+    # 카페 상세 조회
+    path('api/cafes/<str:cafe_name>/ratings/', RatingListView.as_view(), name='rating-list'),  # 특정 카페의 별점 목록 조회 및 추가
+    path('cafes/<str:cafe_name>/ratings/<int:pk>/', RatingDetailView.as_view(), name='rating-detail'),
     # 특정 카페의 개별 별점 수정 및 삭제
-    path('cafes/<int:cafe_id>/reviews/', ReviewListView.as_view(), name='review-list'),  # 특정 카페의 리뷰 목록 조회 및 작성
-    path('cafes/<int:cafe_id>/reviews/<int:pk>/', ReviewDetailView.as_view(), name='review-detail'),
+    path('cafes/<str:cafe_name>/reviews/', ReviewListView.as_view(), name='review-list'),  # 특정 카페의 리뷰 목록 조회 및 작성
+    path('cafes/<str:cafe_name>/reviews/<int:pk>/', ReviewDetailView.as_view(), name='review-detail'),
     # 특정 카페의 개별 리뷰 수정 및 삭제
 
     # 길찾기

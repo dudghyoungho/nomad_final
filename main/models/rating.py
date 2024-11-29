@@ -3,7 +3,7 @@ from django.conf import settings
 from .cafe import Cafe
 
 class Rating(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  # 별점 작성자
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True,blank=True)  # 별점 작성자
     cafe = models.ForeignKey(Cafe, related_name='ratings', on_delete=models.CASCADE)  # 대상 장소
     rating = models.PositiveSmallIntegerField()  # 별점 (1~5)
     created_at = models.DateTimeField(auto_now_add=True)  # 작성 시간

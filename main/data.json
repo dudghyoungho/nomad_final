@@ -1,0 +1,394 @@
+[
+  {
+    "name": "도화아파트먼트 마포",
+    "address": "서울 마포구 도화2길 27 1층 B101호~102호",
+    "isConcentrate": true,
+    "opening_hours": "09:00 - 21:30",
+    "latitude": "37.5395358",
+    "longitude": "126.9494918"
+  },
+  {
+    "name": "콘하스 효창공원점",
+    "address": "서울 용산구 효창원로62길 7-6 1-3층",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 23:00",
+    "latitude": "37.5399416",
+    "longitude": "126.9621966"
+  },
+  {
+    "name": "채그로",
+    "address": "서울 마포구 마포대로4다길 31",
+    "isConcentrate": true,
+    "opening_hours": "09:30 - 21:30",
+    "latitude": "37.5356484",
+    "longitude": "126.9442679"
+  },
+  {
+    "name": "나이스워크투데이",
+    "address": "서울 마포구 백범로10길 26 2F",
+    "isConcentrate": true,
+    "opening_hours": "09:00 - 21:00",
+    "latitude": "37.5482359",
+    "longitude": "126.9397607"
+  },
+  {
+    "name": "을의커피",
+    "address": "서울 용산구 청파로47나길 13 1층",
+    "isConcentrate": true,
+    "opening_hours": "11:00 - 22:00",
+    "latitude": "37.5455801",
+    "longitude": "126.9668288"
+  },
+  {
+    "name": "방그레커피",
+    "address": "서울 마포구 대흥로 180 1층 방그레커피",
+    "isConcentrate": true,
+    "opening_hours": "08:00 - 22:30",
+    "latitude": "37.5550625",
+    "longitude": "126.9461813"
+  },
+  {
+    "name": "후타바 킷사",
+    "address": "서울 마포구 고산18길 6 1층 일부호",
+    "isConcentrate": true,
+    "opening_hours": "12:00 - 23:00",
+    "latitude": "37.5541048",
+    "longitude": "126.9451650"
+  },
+  {
+    "name": "카페4293",
+    "address": "서울 서대문구 이화여대길 18 1층",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 22:00",
+    "latitude": "37.5576761",
+    "longitude": "126.9459529"
+  },
+  {
+    "name": "북카페파오",
+    "address": "서울 서대문구 이화여대길 34 신흥빌딩 3층 파오",
+    "isConcentrate": true,
+    "opening_hours": "12:00 - 22:00",
+    "latitude": "37.5584288",
+    "longitude": "126.9459565"
+  },
+  {
+    "name": "정오",
+    "address": "서울 용산구 청파로47길 11 1층 정오커피로터스",
+    "isConcentrate": true,
+    "opening_hours": "09:00 - 24:00",
+    "latitude": "37.5447513",
+    "longitude": "126.9697897"
+  },
+  {
+    "name": "커피브레이크",
+    "address": "서울 마포구 백범로 29",
+    "isConcentrate": true,
+    "opening_hours": "07:00 - 23:30",
+    "latitude": "37.5521189",
+    "longitude": "126.9377226"
+  },
+  {
+    "name": "카우프 로스터스 신수",
+    "address": "서울 마포구 백범로 36-1",
+    "isConcentrate": true,
+    "opening_hours": "09:00 - 21:00",
+    "latitude": "37.5515340",
+    "longitude": "126.9371517"
+  },
+  {
+    "name": "신촌브루스",
+    "address": "서울 서대문구 신촌로 87-4 B동 4층",
+    "isConcentrate": true,
+    "opening_hours": "12:00 - 21:00",
+    "latitude": "37.5557510",
+    "longitude": "126.9362718"
+  },
+  {
+    "name": "미플",
+    "address": "서울 서대문구 신촌로 109 신촌 르메이에르타운5 B2",
+    "isConcentrate": true,
+    "opening_hours": "09:00 - 24:00",
+    "latitude": "37.5557525",
+    "longitude": "126.9381006"
+  },
+  {
+    "name": "리버트리커피",
+    "address": "서울 서대문구 신촌로 141 1층",
+    "isConcentrate": true,
+    "opening_hours": "9:00 - 22:002",
+    "latitude": "37.5568582",
+    "longitude": "126.9415786"
+  },
+  {
+    "name": "트리클",
+    "address": "서울 서대문구 연세로 3-3 104호, 204호",
+    "isConcentrate": true,
+    "opening_hours": "12:30 - 22:00",
+    "latitude": "37.5558752",
+    "longitude": "126.9366162"
+  },
+  {
+    "name": "모티브 스터디카페",
+    "address": "서울 서대문구 연세로4길 40",
+    "isConcentrate": true,
+    "opening_hours": "00:00 - 24:00",
+    "latitude": "37.5578604",
+    "longitude": "126.9389041"
+  },
+  {
+    "name": "카페 플레이스",
+    "address": "서울 서대문구 연세로 20 . 2,3층",
+    "isConcentrate": true,
+    "opening_hours": "0:00 - 24:000",
+    "latitude": "37.5574794",
+    "longitude": "126.9370688"
+  },
+  {
+    "name": "페즈 라이브러리 스터디카페 신촌",
+    "address": "서울 서대문구 명물길 21 3층",
+    "isConcentrate": true,
+    "opening_hours": "00:00 - 24:00",
+    "latitude": "37.5581954",
+    "longitude": "126.9376597"
+  },
+  {
+    "name": "사람인 카페",
+    "address": "서울 서대문구 연세로 22 2층",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 22:00",
+    "latitude": "37.5575872",
+    "longitude": "126.9371059"
+  },
+  {
+    "name": "계절의 목소리",
+    "address": "서울 서대문구 이화여대3길 27 2층",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 22:00",
+    "latitude": "37.5578532",
+    "longitude": "126.9442390"
+  },
+  {
+    "name": "안다르커피",
+    "address": "서울 서대문구 연세로9길 25",
+    "isConcentrate": true,
+    "opening_hours": "12:00 - 23:30",
+    "latitude": "37.5584219",
+    "longitude": "126.9353939"
+  },
+  {
+    "name": "독수리다방",
+    "address": "서울 서대문구 연세로 36 독수리빌딩 8층",
+    "isConcentrate": true,
+    "opening_hours": "11:00 - 23:30",
+    "latitude": "37.5587905",
+    "longitude": "126.9372505"
+  },
+  {
+    "name": "카페 문베어",
+    "address": "서울 서대문구 명물길 66 1층 cafe moonbear",
+    "isConcentrate": true,
+    "opening_hours": "09:00 - 23:00",
+    "latitude": "37.5589006",
+    "longitude": "126.9398669"
+  },
+  {
+    "name": "꽃피다이화다방",
+    "address": "서울 서대문구 이화여대길 75 이화타워8층 이화다방",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 22:40",
+    "latitude": "37.5590570",
+    "longitude": "126.9443101"
+  },
+  {
+    "name": "두비덥 카페 쉼",
+    "address": "서울 마포구 서강로 65 2층",
+    "isConcentrate": true,
+    "opening_hours": "09:30 - 22:00",
+    "latitude": "37.5491097",
+    "longitude": "126.9315832"
+  },
+  {
+    "name": "이대앞 스터디카페",
+    "address": "서울 서대문구 이화여대길 52-49 5층",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 24:00",
+    "latitude": "37.5596301",
+    "longitude": "126.9451198"
+  },
+  {
+    "name": "카페 가비애",
+    "address": "서울 마포구 와우산로 147-1 1층과 2층",
+    "isConcentrate": true,
+    "opening_hours": "0:00 - 24:00",
+    "latitude": "37.5544279",
+    "longitude": "126.9295382"
+  },
+  {
+    "name": "어피스오브",
+    "address": "서울 마포구 와우산로 134 1층",
+    "isConcentrate": true,
+    "opening_hours": "10:30 - 19:30",
+    "latitude": "37.5534862",
+    "longitude": "126.9283245"
+  },
+  {
+    "name": "북티크",
+    "address": "서울 마포구 독막로31길 9 2층",
+    "isConcentrate": true,
+    "opening_hours": "12:00 - 22:00",
+    "latitude": "37.5477864",
+    "longitude": "126.9390164"
+  },
+  {
+    "name": "카쩨",
+    "address": "서울 서대문구 이화여대2길 26 1층 102, 103호",
+    "isConcentrate": true,
+    "opening_hours": "08:00 - 20:00",
+    "latitude": "37.5573677",
+    "longitude": "126.9474362"
+  },
+  {
+    "name": "모음",
+    "address": "서울 서대문구 신촌역로 11 1층, 2층",
+    "isConcentrate": true,
+    "opening_hours": "11:00 - 22:00",
+    "latitude": "37.5577362",
+    "longitude": "126.9425853"
+  },
+  {
+    "name": "꾼낚시카페 홍대신촌점",
+    "address": "서울 서대문구 명물길 66 지하1층 꾼낚시카페",
+    "isConcentrate": true,
+    "opening_hours": "12:00 - 02:00",
+    "latitude": "37.5589006",
+    "longitude": "126.9398669"
+  },
+  {
+    "name": "크레스타운 이대점",
+    "address": "서울 서대문구 이화여대길 45 2층, 3층",
+    "isConcentrate": true,
+    "opening_hours": "07:00 - 22:00",
+    "latitude": "37.5589429",
+    "longitude": "126.9455868"
+  },
+  {
+    "name": "카페더퍼즐",
+    "address": "서울 마포구 대흥로 188-1",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 21:00",
+    "latitude": "37.5558608",
+    "longitude": "126.9461685"
+  },
+  {
+    "name": "품",
+    "address": "서울 서대문구 이화여대2길 26 1층 101호",
+    "isConcentrate": true,
+    "opening_hours": "11:00 - 18:00",
+    "latitude": "37.5573677",
+    "longitude": "126.9474362"
+  },
+  {
+    "name": "작업실01",
+    "address": "서울 마포구 홍익로2길 27-17 1층",
+    "isConcentrate": true,
+    "opening_hours": "12:00 - 22:30",
+    "latitude": "37.5555261",
+    "longitude": "126.9242545"
+  },
+  {
+    "name": "렉터스라운지 홍대",
+    "address": "서울 마포구 와우산로29가길 54-6 지하1층, 지상1층",
+    "isConcentrate": true,
+    "opening_hours": "12:00 - 24:00",
+    "latitude": "37.5540460",
+    "longitude": "126.9266721"
+  },
+  {
+    "name": "커피덕",
+    "address": "서울 마포구 월드컵북로2길 37 커피덕",
+    "isConcentrate": true,
+    "opening_hours": "08:30 - 21:00",
+    "latitude": "37.5569118",
+    "longitude": "126.9226226"
+  },
+  {
+    "name": "써니데이 인 잔다리",
+    "address": "서울 마포구 잔다리로 88 1층",
+    "isConcentrate": true,
+    "opening_hours": "11:00 - 20:00",
+    "latitude": "37.5552383",
+    "longitude": "126.9158243"
+  },
+  {
+    "name": "1984",
+    "address": "서울 마포구 동교로 194 혜원빌딩 1층",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 23:00",
+    "latitude": "37.5573823",
+    "longitude": "126.9228798"
+  },
+  {
+    "name": "디벙크",
+    "address": "서울 마포구 성지1길 30 더보이드빌딩 지하1층",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 23:00",
+    "latitude": "37.5479100",
+    "longitude": "126.9151208"
+  },
+  {
+    "name": "공상온도",
+    "address": "서울 마포구 동교로23길 40 지하",
+    "isConcentrate": true,
+    "opening_hours": "12:30 - 22:00",
+    "latitude": "37.5576792",
+    "longitude": "126.9197850"
+  },
+  {
+    "name": "커피빈 상수역점",
+    "address": "서울 마포구 와우산로10길 3 엘케이빌딩 1~3층",
+    "isConcentrate": true,
+    "opening_hours": "07:00 - 22:00",
+    "latitude": "37.5481256",
+    "longitude": "126.9231858"
+  },
+  {
+    "name": "카페꼼마 합정점",
+    "address": "서울 마포구 포은로 49",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 22:00",
+    "latitude": "37.5519413",
+    "longitude": "126.9067575"
+  },
+  {
+    "name": "모리츠플라츠 합정",
+    "address": "서울 마포구 토정로5길 22",
+    "isConcentrate": true,
+    "opening_hours": "09:00 - 23:00",
+    "latitude": "37.5464093",
+    "longitude": "126.9185730"
+  },
+  {
+    "name": "47625 coffee",
+    "address": "서울 마포구 월드컵로10길 9 1층",
+    "isConcentrate": true,
+    "opening_hours": "10:00 - 21:00",
+    "latitude": "37.5546731",
+    "longitude": "126.9122307"
+  },
+  {
+    "name": "새검정",
+    "address": "서울 마포구 독막로2길 17 1층",
+    "isConcentrate": true,
+    "opening_hours": "11:30 - 22:00",
+    "latitude": "37.5478097",
+    "longitude": "126.9147633"
+  },
+  {
+    "name": "로잉커피",
+    "address": "서울 마포구 동교로 34 2층",
+    "isConcentrate": true,
+    "opening_hours": "11:00 - 22:00",
+    "latitude": "37.5523415",
+    "longitude": "126.9062382"
+  }
+]

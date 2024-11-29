@@ -2,9 +2,14 @@ from rest_framework import serializers
 from ..models.review import Review
 
 class ReviewSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField()  # 사용자 이름을 문자열로 반환
-    cafe = serializers.PrimaryKeyRelatedField(read_only=True)  # 장소 ID만 반환
+    cafe = serializers.SerializerMethodField()  # 카페 이름 반환
 
     class Meta:
         model = Review
-        fields = ['id', 'user', 'cafe', 'content', 'created_at', 'updated_at']  # 필요한 필드만 포함
+        fields = ['cafe', 'content', 'created_at']  # 필요한 필드만 포함
+
+    def get_cafe(self, obj):
+        """
+        카페 이름 반환
+        """
+        return obj.cafe.name  # 카페 이름만 반환

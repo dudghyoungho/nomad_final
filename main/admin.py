@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Cafe
 
-# Register your models here.
+@admin.register(Cafe)
+class CafeAdmin(admin.ModelAdmin):
+    list_display = ('name', 'address', 'isConcentrate', 'opening_hours', 'latitude', 'longitude')

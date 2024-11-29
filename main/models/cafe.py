@@ -4,12 +4,13 @@ from django.utils.timezone import now
 
 
 class Cafe(models.Model):
-    name = models.CharField(max_length=300)  # 장소 이름 (지점 + 이름 통합)
-    address = models.CharField(max_length=300, blank=True, null=True)  # 장소 주소
-    latitude = models.FloatField()  # 위도
-    longitude = models.FloatField()  # 경도
-    photo = models.ImageField(upload_to='places/photos/', blank=True, null=True)  # 장소 사진
-    opening_hours = models.CharField(max_length=100, blank=True, null=True)  # 영업시간 (예: "12:00 ~ 22:00")
+    name = models.CharField(max_length=300)
+    address = models.CharField(max_length=300, blank=True, null=True)
+    isConcentrate = models.BooleanField(default=False)  # 집중하기 좋은 카페
+    opening_hours = models.CharField(max_length=100, blank=True, null=True)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+    distance = models.FloatField(null=True, blank=True)
 
     def get_status(self):
         """
@@ -23,7 +24,7 @@ class Cafe(models.Model):
             return "영업 시간 정보를 제공해주지 않는 카페입니다."
 
         try:
-            start_time, end_time = self.opening_hours.split("~")
+            start_time, end_time = self.opening_hours.split("-")
             current_time = now().time()
             start_time = datetime.strptime(start_time.strip(), "%H:%M").time()
             end_time = datetime.strptime(end_time.strip(), "%H:%M").time()

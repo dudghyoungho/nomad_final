@@ -1,6 +1,6 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.exceptions import ValidationError
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from drf_yasg.utils import swagger_auto_schema
 from ..models.cafe import Cafe
 from ..models.review import Review
@@ -12,7 +12,7 @@ class ReviewListView(ListCreateAPIView):
     특정 카페의 리뷰 조회 및 작성
     """
     serializer_class = ReviewSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [AllowAny]
 
     @swagger_auto_schema(
         operation_summary="리뷰 조회 및 작성",
@@ -24,15 +24,18 @@ class ReviewListView(ListCreateAPIView):
         return super().post(request, *args, **kwargs)
 
     def get_queryset(self):
-        cafe_id = self.kwargs.get('cafe_id')
-        return Review.objects.filter(cafe_id=cafe_id)
+        cafe_name = self.kwargs.get('cafe_name')
+        return Review.objects.filter(cafe__name=cafe_name)
 
     def perform_create(self, serializer):
+        cafe_name = self.kwargs.get('cafe_name')
         try:
-            cafe = Cafe.objects.get(id=self.kwargs.get('cafe_id'))
+            cafe = Cafe.objects.get(name=cafe_name)
         except Cafe.DoesNotExist:
             raise ValidationError({"cafe": "해당 카페를 찾을 수 없습니다."})
-        serializer.save(user=self.request.user, cafe=cafe)
+
+        # user 없이 저장
+        serializer.save(cafe=cafe)
 
 
 class ReviewDetailView(RetrieveUpdateDestroyAPIView):
