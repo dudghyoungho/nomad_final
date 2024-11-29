@@ -8,4 +8,4 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'author_name', 'content', 'is_private', 'created_at', 'parent']
-
+        ref_name = 'CommentSerializer'  # ref_name 명시적으로 설정

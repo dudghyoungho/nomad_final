@@ -12,7 +12,6 @@ class Post(models.Model):
     author_name = models.CharField(max_length=100)  # 작성자 이름 (익명 게시판은 "익명", 일반 게시판은 닉네임)
     title = models.CharField(max_length=200)
     content = models.TextField()
-    image = models.ImageField(upload_to='posts/images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

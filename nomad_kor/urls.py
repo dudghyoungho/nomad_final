@@ -115,7 +115,7 @@ urlpatterns = [
 
     # 익명 게시판
     path('network/anonymous/', AnonymousListView.as_view(), name='anonymous-list'),
-    path('network/anonymous/<int:anonymous_id>/', AnonymousDetailView.as_view(), name='anonymous-detail'),
+    path('network/anonymous/<int:pk>/', AnonymousDetailView.as_view(), name='anonymous-detail'),
     path('network/anonymous/<int:anonymous_id>/posts/', PostListView.as_view(), name='anonymous-post-list'),
     path('network/anonymous/<int:anonymous_id>/posts/<int:pk>/', PostDetailView.as_view(), name='anonymous-post-detail'),
     path('network/anonymous/<int:anonymous_id>/posts/<int:post_id>/comments/', CommentListView.as_view(), name='anonymous-comment-list'),

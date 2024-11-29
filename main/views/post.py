@@ -1,3 +1,4 @@
+from rest_framework import generics
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.exceptions import ValidationError
@@ -7,13 +8,13 @@ from drf_yasg import openapi
 from ..serializers.post import PostSerializer
 from ..models import Position, FTF, Anonymous, Post
 from rest_framework.exceptions import NotFound
+from ..serializers.postwithcomment import PostWithCommentsSerializer
 # Swagger 요청 및 응답 스키마 정의
 post_create_request_schema = openapi.Schema(
     type=openapi.TYPE_OBJECT,
     properties={
         'title': openapi.Schema(type=openapi.TYPE_STRING, description='게시글 제목'),
         'content': openapi.Schema(type=openapi.TYPE_STRING, description='게시글 내용'),
-        'image': openapi.Schema(type=openapi.TYPE_STRING, format='binary', description='첨부 이미지 (선택)'),
     },
     required=['title', 'content']
 )
@@ -25,7 +26,6 @@ post_response_schema = openapi.Schema(
         'author_name': openapi.Schema(type=openapi.TYPE_STRING, description='작성자 이름'),
         'title': openapi.Schema(type=openapi.TYPE_STRING, description='게시글 제목'),
         'content': openapi.Schema(type=openapi.TYPE_STRING, description='게시글 내용'),
-        'image': openapi.Schema(type=openapi.TYPE_STRING, description='첨부 이미지 URL'),
         'created_at': openapi.Schema(type=openapi.TYPE_STRING, format='datetime', description='작성일시'),
     }
 )
@@ -123,21 +123,18 @@ class PostListView(ListCreateAPIView):
             raise ValidationError({"error": "Invalid board type in URL."})
 
 
-class PostDetailView(RetrieveUpdateDestroyAPIView):
+class PostDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     게시글 상세 조회, 수정 및 삭제
     """
-    serializer_class = PostSerializer
+    serializer_class = PostWithCommentsSerializer  # 댓글과 대댓글을 포함하는 시리얼라이저
     permission_classes = [IsAuthenticatedOrReadOnly]
-    queryset = Post.objects.all()  # 기본 queryset 설정
+    queryset = Post.objects.all()
 
     @swagger_auto_schema(
         operation_summary="게시글 상세 조회",
         operation_description="특정 게시글의 정보를 조회합니다.",
-        responses={
-            200: openapi.Response(description="조회 성공", schema=post_response_schema),
-            404: openapi.Response(description="게시글을 찾을 수 없습니다."),
-        }
+        responses={200: openapi.Response(description="조회 성공", schema=PostWithCommentsSerializer)},
     )
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
@@ -145,12 +142,16 @@ class PostDetailView(RetrieveUpdateDestroyAPIView):
     @swagger_auto_schema(
         operation_summary="게시글 수정",
         operation_description="특정 게시글의 정보를 수정합니다.",
-        request_body=post_create_request_schema,
-        responses={
-            200: openapi.Response(description="수정 성공", schema=post_response_schema),
-            400: openapi.Response(description="잘못된 요청"),
-            404: openapi.Response(description="게시글을 찾을 수 없습니다."),
-        }
+        request_body=openapi.Schema(
+            type=openapi.TYPE_OBJECT,
+            properties={
+                'title': openapi.Schema(type=openapi.TYPE_STRING),
+                'content': openapi.Schema(type=openapi.TYPE_STRING),
+                'image': openapi.Schema(type=openapi.TYPE_STRING, format='binary'),
+            },
+            required=['title', 'content']
+        ),
+        responses={200: openapi.Response(description="수정 성공"), 400: openapi.Response(description="잘못된 요청")},
     )
     def patch(self, request, *args, **kwargs):
         return super().patch(request, *args, **kwargs)
@@ -158,10 +159,7 @@ class PostDetailView(RetrieveUpdateDestroyAPIView):
     @swagger_auto_schema(
         operation_summary="게시글 삭제",
         operation_description="특정 게시글을 삭제합니다.",
-        responses={
-            204: openapi.Response(description="삭제 성공"),
-            404: openapi.Response(description="게시글을 찾을 수 없습니다."),
-        }
+        responses={204: openapi.Response(description="삭제 성공")},
     )
     def delete(self, request, *args, **kwargs):
         return super().delete(request, *args, **kwargs)
@@ -169,31 +167,10 @@ class PostDetailView(RetrieveUpdateDestroyAPIView):
     def get_object(self):
         post_id = self.kwargs.get('pk')
 
-        # Position 게시판 처리
-        if 'position' in self.request.path:
-            position_id = self.kwargs.get('position_id')
-            try:
-                return Post.objects.get(position_id=position_id, id=post_id)
-            except Post.DoesNotExist:
-                raise NotFound("Post not found for the given Position board.")
-
-        # Anonymous 게시판 처리
-        elif 'anonymous' in self.request.path:
-            anonymous_id = self.kwargs.get('anonymous_id')
-            try:
-                return Post.objects.get(anonymous_id=anonymous_id, id=post_id)
-            except Post.DoesNotExist:
-                raise NotFound("Post not found for the given Anonymous board.")
-
-        # FTF 게시판 처리
-        elif 'ftf' in self.request.path:
-            ftf_id = self.kwargs.get('ftf_id')
-            try:
-                return Post.objects.get(ftf_id=ftf_id, id=post_id)
-            except Post.DoesNotExist:
-                raise NotFound("Post not found for the given FTF board.")
-
-        # 예외 처리
-        else:
-            raise NotFound("Invalid board type in the URL.")
+        # 게시글을 찾고, 그에 해당하는 댓글들을 포함
+        try:
+            post = Post.objects.get(id=post_id)
+            return post
+        except Post.DoesNotExist:
+            raise NotFound("게시글을 찾을 수 없습니다.")
 
